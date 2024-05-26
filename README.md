@@ -93,13 +93,13 @@
 
 ## Reflection
 
-# What I learned
+### What I learned
 
    I familiarized myself with the principles of Conditional Random Fields (CRF) and their application in named entity recognition (NER). I gained an understanding of how both attention mechanisms and CRF can contribute to enhancing the overall performance of NER models. My exploration extended to various alignment score functions within the attention mechanism framework.
 
    Furthermore, I delved into the practical implementation of CRF and attention mechanisms within recurrent neural networks. This involved acquiring insights into their configuration and integration into the architecture. Recognizing the significance of diversified feature embeddings in NER, I expanded my knowledge on the importance of incorporating multiple types of embeddings to enrich the model's understanding and performance.
 
-# What can be improved
+### What can be improved
 
    The outcomes I have achieved in terms of entity extraction thus far fall short of my expectations. As previously discussed, my strategy moving forward entails the incorporation of additional feature embedding layers, encompassing character embedding, Part-of-Speech (POS) tagging, and chunking. Furthermore, I intend to implement an attention layer in line with the approach outlined in the paper.
 
@@ -107,6 +107,6 @@
 
    Expanding my horizons, I aim to delve into advanced techniques such as transformers, BERT, and large-scale language models. I am eager to explore their potential contributions to refining my model's capabilities. By experimenting with these techniques, I aspire to achieve a substantial improvement in the efficacy of my entity extraction model.
 
-# New applications of NER
+### New applications of NER
 
    We can build an app that scans cookizng blogs, articles, and websites, extracting named entities like ingredients, cuisine types, and dietary preferences using NER. Users provide dietary requirements and flavor preferences. The app uses NER to extract ingredients from recipes and matches them to users' preferences. It generates personalized, healthy recipes that align with their dietary needs and taste preferences, offering an innovative solution for individuals seeking nutritious and tailored meal options.
