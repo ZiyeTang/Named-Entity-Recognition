@@ -1,6 +1,6 @@
 ﻿# Named Entity Extraction: Survey, Implement, and Apply
 
-## Q1:
+## State of the art:
 
 **The paper I read**: Luo, L. *et al* (2018) *An attention-based BiLSTM-CRF approach to*
 
@@ -56,7 +56,7 @@
 1. Att-BiLSTM-CRF  with document-level method performs better than that with sentence-level method. It also performs better than BiLSTM-CRF with sentence-level or document-level.
 
 
-## Q2:
+## Observation, analysis and interpretation:
 
    In the scope of this paper, several intriguing techniques piqued my interest for potential implementation, including character embedding, Part-of-Speech (POS) tagging, chunking, attention mechanisms, and Conditional Random Fields (CRF). However, due to constraints, I ultimately managed to execute the implementation of a BiLSTM-CRF model, albeit without the integration of attention mechanisms. My feature extraction approach centered solely around word embeddings, forgoing the amalgamation of POS, chunking, dictionary features, word embeddings, and character embeddings.
 
@@ -81,7 +81,7 @@
 
    Based on the results, I observed that the performance improvement of BiLSTM-CRF compared to BiLSTM is not substantial for the dataset I used. This might be attributed to the fact that the sequence labeling task within the dataset is relatively straightforward, and the interdependencies between labels are not notably intricate. Consequently, the added complexity introduced by the CRF layer might not yield a significant advantage in this context. In tasks like Named Entity Recognition (NER), where label dependencies are prevalent and meaningful, the BiLSTM model alone may struggle to effectively capture these dependencies, as its primary focus is on making predictions for individual tokens. In contrast, the CRF layer integrated into the BiLSTM-CRF model explicitly accounts for label transitions, ensuring that the predicted labels create coherent and valid sequences.
 
-## Q3
+## How does the application work 
 
    Here's an overview of how my extension operates: To begin, I initiate the server, which involves loading the model and initializing the word and tag dictionaries. Following this, I can navigate to a web page and utilize the mouse to select specific portions of text. Once the text is chosen, the web page triggers the reading process, which subsequently prompts a POST request directed at the server.
 
@@ -91,15 +91,15 @@
 
    To enhance the utility of my extension, the initial step involves incorporating a character embedding layer at the outset of the architecture. This addition empowers the model to accurately identify and label unfamiliar words. Relying solely on word embedding would invariably lead the model to classify these words as non-named entities.  Another enhancement I can implement involves deploying the model and server within a Docker container and subsequently constructing the Docker image. This encapsulation of the server within a container guarantees its seamless operation across various environments without any disruptions. Furthermore, in order to enhance the model's efficacy across a range of diverse web pages, I recognize the necessity of obtaining datasets sourced from online platforms. This involves procuring datasets that have been compiled from the internet to specifically cater to the varying characteristics of web content. As a potential solution, I plan to acquire datasets such as MultiNERD, WikiNEuRal, and wikigold, all of which originate from Wikipedia. Additionally, I intend to consider datasets like Ritter and BTC, both of which have been curated from Twitter. By incorporating such internet-derived datasets into my training regimen, I aim to equip the model with a broader contextual understanding of web-based content, thereby bolstering its performance on a multitude of online sources.
 
-## Q4
+## Reflection
 
-   Q 4.1
+# What I learned
 
    I familiarized myself with the principles of Conditional Random Fields (CRF) and their application in named entity recognition (NER). I gained an understanding of how both attention mechanisms and CRF can contribute to enhancing the overall performance of NER models. My exploration extended to various alignment score functions within the attention mechanism framework.
 
    Furthermore, I delved into the practical implementation of CRF and attention mechanisms within recurrent neural networks. This involved acquiring insights into their configuration and integration into the architecture. Recognizing the significance of diversified feature embeddings in NER, I expanded my knowledge on the importance of incorporating multiple types of embeddings to enrich the model's understanding and performance.
 
-   Q 4.2
+# What can be improved
 
    The outcomes I have achieved in terms of entity extraction thus far fall short of my expectations. As previously discussed, my strategy moving forward entails the incorporation of additional feature embedding layers, encompassing character embedding, Part-of-Speech (POS) tagging, and chunking. Furthermore, I intend to implement an attention layer in line with the approach outlined in the paper.
 
@@ -107,6 +107,6 @@
 
    Expanding my horizons, I aim to delve into advanced techniques such as transformers, BERT, and large-scale language models. I am eager to explore their potential contributions to refining my model's capabilities. By experimenting with these techniques, I aspire to achieve a substantial improvement in the efficacy of my entity extraction model.
 
-   Q4.3
+# New applications of NER
 
    We can build an app that scans cookizng blogs, articles, and websites, extracting named entities like ingredients, cuisine types, and dietary preferences using NER. Users provide dietary requirements and flavor preferences. The app uses NER to extract ingredients from recipes and matches them to users' preferences. It generates personalized, healthy recipes that align with their dietary needs and taste preferences, offering an innovative solution for individuals seeking nutritious and tailored meal options.
